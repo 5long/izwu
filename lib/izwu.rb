@@ -34,7 +34,23 @@ module Izwu
       expectations = Config.load_expectations
       local = Expac.get_local_pkgs(expectations.keys)
       syncdb = Expac.get_syncdb_pkgs(expectations.keys)
-      pp calc_matches(expectations, local, syncdb)
+      matches = calc_matches(expectations, local, syncdb)
+      print_matches(matches)
+      exit_with_matches(matches)
+    end
+
+    def main!
+      exit(main)
+    end
+
+    def print_matches(matches)
+      matches.each do |m|
+        puts "#{m.repo}/#{m.name} #{m.version}"
+      end
+    end
+
+    def exit_with_matches(matches)
+      matches.empty? ? 1 : 0
     end
 
   end
