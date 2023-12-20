@@ -30,7 +30,13 @@ module Izwu
       end.reject!(&:nil?)
     end
 
-    def main
+    def init
+      Config.write_example_conf!
+    end
+
+    def main(subcmd)
+      return init() if subcmd == "init"
+
       expectations = Config.load_expectations
       local = Expac.get_local_pkgs(expectations.keys)
       syncdb = Expac.get_syncdb_pkgs(expectations.keys)
@@ -39,8 +45,8 @@ module Izwu
       exit_with_matches(matches)
     end
 
-    def main!
-      exit(main)
+    def main!(*args)
+      exit(main(*args))
     end
 
     def print_matches(matches)

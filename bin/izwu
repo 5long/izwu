@@ -2,4 +2,4 @@
 
 require 'izwu'
 
-Izwu.main!
+Izwu.main!(ARGV[0])
