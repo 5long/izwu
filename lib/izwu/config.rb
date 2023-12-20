@@ -16,10 +16,11 @@ module Izwu
       end
 
       def find_conf_file
-        %W[
-          #{ENV['XDG_CONFIG_HOME']}/izwu/izwu.yaml
-          #{ENV['HOME']}/.config/izwu/izwu.yaml
-        ].first{|f| File.exist? f }
+        xdg_conf_path = "#{ENV['XDG_CONFIG_HOME']}/izwu/izwu.yaml"
+        default_conf_path = "#{ENV['HOME']}/.config/izwu/izwu.yaml"
+
+        File.exist?(xdg_conf_path) ?
+          xdg_conf_path : default_conf_path
       end
     end
   end
