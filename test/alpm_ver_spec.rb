@@ -2,7 +2,10 @@ require 'minitest/autorun'
 
 require 'izwu/alpm_ver'
 
+
 describe Izwu::AlpmVer do
+  AlpmVer = Izwu::AlpmVer
+
   describe "The version 1:2.3.4-5 compares" do
     before do
       @v = Izwu::AlpmVer.parse_full_ver('1:2.3.4-5')
@@ -50,6 +53,21 @@ describe Izwu::AlpmVer do
       @versions.size.times.drop(1).each do |i|
         assert_operator @versions[i - 1], :<, @versions[i], "i is #{i}"
       end
+    end
+  end
+
+  describe "a 4-segment version 1.2.3.4-1" do
+    subject {"1.2.3.4-1"}
+
+    before do
+      @v4 = AlpmVer.parse_full_ver(subject)
+    end
+
+    it "is less than 1.2.3.5-1" do
+      skip "Not implemented yet."
+      v5 = AlpmVer.parse_full_ver("1.2.3.5-1")
+      assert_not_equal @v4, v5
+      assert_operator @v4, :>, v5
     end
   end
 end
