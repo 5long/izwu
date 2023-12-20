@@ -23,7 +23,7 @@ module Izwu
 
     def validate!
       if not ENUM_CHANGE.has_key?(self.change)
-        raise ArgumentError, "#{name} has an invalid value of change: #{change}. Must be one of #{ENUM_CHANGE.keys}"
+        raise ArgumentError.new("#{name} has an invalid value of change: #{change}. Must be one of #{ENUM_CHANGE.keys}")
       end
     end
 
