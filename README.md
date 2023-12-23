@@ -52,7 +52,7 @@ in example config file for now.
 
 ## License
 
-See <LICENSE.md>
+See (LICENSE.md)[LICENSE.md]
 
 
 [PKGBUILD]: https://wiki.archlinux.org/title/PKGBUILD#pkgrel
