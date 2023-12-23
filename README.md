@@ -41,8 +41,8 @@ For now only Arch Linux is suppported.
 You could chain commands together as an shell alias like this:
 
 ```sh
-# Bash / zsh alias:
-alias checkupgrades="pacman -Sy; izwu && pacman -Su"
+# bash / zsh alias (might work for fish as well):
+alias checkupgrades="sudo pacman -Sy; izwu && sudo pacman -Su"
 ```
 
 ## Configuration
