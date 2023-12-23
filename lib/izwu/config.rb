@@ -49,7 +49,13 @@ EOF
 
     class << self
       def load_expectations
-        conf = YAML.safe_load_file(find_conf_file)
+        fn = find_conf_file()
+        begin
+          conf = YAML.safe_load_file(fn)
+        rescue
+          $stderr.puts "Config file #{fn} missing. Run `izwu init` to generate an example config."
+          exit 3
+        end
 
         conf['expectations'].reduce Hash.new do |result, e|
           e = Izwu::Expectation.load_from_conf(e)
