@@ -17,6 +17,8 @@ module Izwu
   class << self
     def calc_matches(expectations, local, syncdb)
       syncdb.map do |pkg|
+        next if not local.has_key?(n)
+
         n = pkg.name
         dbver = AlpmVer.parse_full_ver(pkg.version)
         localver = AlpmVer.parse_full_ver(local[n].version)
