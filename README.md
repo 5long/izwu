@@ -42,7 +42,7 @@ You could chain commands together as a shell alias like this:
 
 ```sh
 # bash / zsh alias (might work for fish as well):
-alias checkupgrades="sudo pacman -Sy; izwu && sudo pacman -Su"
+alias upgrade_if_worthit="sudo pacman -Sy; izwu && sudo pacman -Su"
 ```
 
 ## Configuration
