@@ -3,7 +3,7 @@
 `izwu` checks if your system is worth upgrading.
 
 Many Arch Linux users are addicted to running `pacman -Syu`.
-`izwu` might help you doing so less frequently.
+`izwu` might help you do so less frequently.
 
 ## Installation
 
@@ -11,7 +11,7 @@ Install via [AUR](https://aur.archlinux.org/packages/iwzu):
 
 `paru -S izwu`
 
-For now only Arch Linux is suppported.
+For now only Arch Linux is supported.
 
 ## Usage
 
@@ -38,7 +38,7 @@ For now only Arch Linux is suppported.
 
     If there're no worthy upgrades, it prints nothing and exits `1`. 
 
-You could chain commands together as an shell alias like this:
+You could chain commands together as a shell alias like this:
 
 ```sh
 # bash / zsh alias (might work for fish as well):
@@ -48,7 +48,7 @@ alias checkupgrades="sudo pacman -Sy; izwu && sudo pacman -Su"
 ## Configuration
 
 There's no formal spec of config yet. Just follow the examples
-in example config file for now.
+in the example config file for now.
 
 ## License
 
