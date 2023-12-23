@@ -42,7 +42,7 @@ You could chain commands together as an shell alias like this:
 
 ```sh
 # Bash / zsh alias:
-alias checkupgrades="pacman -Sy; izwu && pacman -Syu"
+alias checkupgrades="pacman -Sy; izwu && pacman -Su"
 ```
 
 ## Configuration
