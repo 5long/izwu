@@ -39,12 +39,6 @@ module Izwu
     # fully upgrade even when only pkgrel bumps
     - name: archlinux-keyring
       change: pkgrel
-    # Same as `change: pkgrel`, but a convenient shorthand:
-    - base
-    - base-devel
-    # Same as above, but omitting `change:`
-    # since `change:` defaults to `pkgrel`
-    - name: filesystem
 EOF
 
     class << self

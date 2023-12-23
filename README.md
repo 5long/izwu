@@ -1,6 +1,9 @@
 # Is It Worth Upgrading?
 
-To check if your system is worth upgrading.
+`izwu` checks if your system is worth upgrading.
+
+Many Arch Linux users are addicted to running `pacman -Syu`.
+`izwu` might help you doing so less frequently.
 
 ## Installation
 
@@ -30,7 +33,7 @@ For now only Arch Linux is suppported.
     this:
 
     ```
-    extra/ffmpeg 2:6.1-3
+    core/linux 6.6.7.arch1-1
     ```
 
     If there're no worthy upgrades, it prints nothing and exits `1`. 
