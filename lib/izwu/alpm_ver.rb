@@ -2,8 +2,8 @@ module Izwu
   class AlpmVer < Struct.new('AlpmVer', :epoch, :pkgver, :pkgrel)
     REGEXP_EPOCH = /^(\d+):/
     REGEXP_PKGREL = /-(\d+)$/
-    CHANGE_KEYS = %i{epoch major minor patch pkgrel}
     PKGVER_SEGMENTS = %i{major minor patch seg4th seg5th seg6th}
+    CHANGE_KEYS = [:epoch] + PKGVER_SEGMENTS + [:pkgrel]
 
     CmpResult = Struct.new('CmpResult', :result, :change)
 
