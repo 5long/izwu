@@ -28,6 +28,9 @@ For now only Arch Linux is supported.
 
 3. Run `pacman -Sy`. Technically this is optional but probably necessary.
 
+    NOTE: this may accidentally [partially upgrade] your system if 
+    you run `pacman -S <package>` afterwards.
+
 4. Run `izwu`. If there's any package matching your upgrade expectations,
     the command exits with a status `0` and prints potential upgrades like
     this:
@@ -55,4 +58,5 @@ in the example config file for now.
 See [LICENSE.md](LICENSE.md)
 
 
+[partially upgrade]: https://wiki.archlinux.org/title/System_maintenance#Partial_upgrades_are_unsupported
 [PKGBUILD]: https://wiki.archlinux.org/title/PKGBUILD#pkgrel
