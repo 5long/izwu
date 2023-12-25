@@ -37,16 +37,20 @@ module Izwu
       self.class.cmp(self, other)&.[](0)
     end
 
+    def segments
+      @segments ||= pkgver.split('.')
+    end
+
     def major
-      pkgver.split('.')[0]&.to_i || 0
+      segments[0]&.to_i || 0
     end
 
     def minor
-      pkgver.split('.')[1]&.to_i || 0
+      segments[1]&.to_i || 0
     end
 
     def patch
-      pkgver.split('.')[2]&.to_i || 0
+      segments[2]&.to_i || 0
     end
   end
 end
