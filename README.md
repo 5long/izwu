@@ -1,9 +1,12 @@
 # Is It Worth Upgrading?
 
-`izwu` checks if your system is worth upgrading.
-
 Many Arch Linux users are addicted to running `pacman -Syu`.
 `izwu` might help you do so less frequently.
+
+You can specify [what packages and how big of their changes][example conf]
+are worhty to trigger an OS upgrade.
+
+In other words, it's like [checkupdates(8)] with a filter.
 
 ## Installation
 
@@ -58,5 +61,7 @@ in the example config file for now.
 See [LICENSE.md](LICENSE.md)
 
 
+[example conf]: [./lib/izwu/example-config.yaml]
+[checkupdates(8)]: https://man.archlinux.org/man/checkupdates.8
 [partially upgrade]: https://wiki.archlinux.org/title/System_maintenance#Partial_upgrades_are_unsupported
 [PKGBUILD]: https://wiki.archlinux.org/title/PKGBUILD#pkgrel
