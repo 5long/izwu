@@ -61,7 +61,7 @@ in the example config file for now.
 See [LICENSE.md](LICENSE.md)
 
 
-[example conf]: [./lib/izwu/example-config.yaml]
+[example conf]: ./lib/izwu/example-config.yaml
 [checkupdates(8)]: https://man.archlinux.org/man/checkupdates.8
 [partially upgrade]: https://wiki.archlinux.org/title/System_maintenance#Partial_upgrades_are_unsupported
 [PKGBUILD]: https://wiki.archlinux.org/title/PKGBUILD#pkgrel
