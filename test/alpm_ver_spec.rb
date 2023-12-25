@@ -64,10 +64,9 @@ describe Izwu::AlpmVer do
     end
 
     it "is less than 1.2.3.5-1" do
-      skip "Not implemented yet."
       v5 = AlpmVer.parse_full_ver("1.2.3.5-1")
-      assert_not_equal @v4, v5
-      assert_operator @v4, :>, v5
+      refute_equal @v4, v5
+      assert_operator @v4, :<, v5
     end
   end
 end
