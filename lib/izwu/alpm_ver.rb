@@ -3,6 +3,7 @@ module Izwu
     REGEXP_EPOCH = /^(\d+):/
     REGEXP_PKGREL = /-(\d+)$/
     CHANGE_KEYS = %i{epoch major minor patch pkgrel}
+    PKGVER_SEGMENTS = %i{major minor patch seg4th seg5th seg6th}
 
     CmpResult = Struct.new('CmpResult', :result, :change)
 
@@ -41,16 +42,14 @@ module Izwu
       @segments ||= pkgver.split('.')
     end
 
-    def major
-      segments[0]&.to_i || 0
+    def segment_count
+      segments.count
     end
 
-    def minor
-      segments[1]&.to_i || 0
-    end
-
-    def patch
-      segments[2]&.to_i || 0
+    PKGVER_SEGMENTS.each_with_index do |s, i|
+      define_method s do
+        segments[i]&.to_i || 0
+      end
     end
   end
 end
