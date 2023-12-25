@@ -5,41 +5,7 @@ require 'izwu/expectation'
 
 module Izwu
   module Config
-    EXAMPLE = <<~EOF
-    ---
-    # An example config file for izwu
-    # Located at $XDG_CONFIG_HOME/izwu/izwu.yaml by default
-
-    ## Contains a single `expectations:` array
-    expectations:
-
-    # Expects that linux bumps a minor version to be worthy of an OS upgrade.
-    # A major version bump (e.g. 5.19.z => 6.0) would also trigger
-    # this rule
-    - name: linux
-      change: minor
-
-    # Some packages' versions are product marketing material
-    # where only a major bump is interesting
-    - name: nvidia
-      change: major
-    - name: firefox
-      change: major
-
-    # Security-critical packages: A patch bump is big enough for
-    # a full upgrade
-    - name: openssl
-      change: patch
-
-    # Some packages' patch releases could contain new feature
-    - name: devtools
-      change: patch
-
-    # Some pacakges are so critical for Arch that you want to
-    # fully upgrade even when only pkgrel bumps
-    - name: archlinux-keyring
-      change: pkgrel
-EOF
+    EXAMPLE = Pathname.new(__dir__).join('example-config.yaml')
 
     class << self
       def load_expectations
@@ -75,7 +41,7 @@ EOF
         end
 
         Pathname.new(fn).parent.mkpath
-        File.write fn, EXAMPLE
+        FileUtils.cp EXAMPLE, fn
         puts "Created example config file #{fn}"
 
         exit 0
