@@ -68,7 +68,7 @@ EOF
 
       def write_example_conf!
         fn = find_conf_file
-        if File.exists? fn
+        if File.exist? fn
           $stderr.puts "Config file #{fn} exists, won't overwrite."
 
           exit 2
